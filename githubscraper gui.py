@@ -21,7 +21,7 @@ api_call_count = 0
 def make_api_request(url, params=None):
     global api_call_count
     headers = {
-        "Authorization": f"token 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"
+        "Authorization": f"INSERT YOUR TOKEN"
     }
     api_call_count += 1
     response = requests.get(url, params=params, headers=headers)
