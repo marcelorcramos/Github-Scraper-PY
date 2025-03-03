@@ -8,10 +8,19 @@ import httpx
 import asyncio
 import logging
 import time
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Allow frontend origin
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all methods
+    allow_headers=["*"],  # Allow all headers
+)
 
 GITHUB_GRAPHQL_URL = "https://api.github.com/graphql"
 api_call_count = 0
