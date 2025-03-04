@@ -9,7 +9,7 @@ from tqdm import tqdm
 # Initialize colorama
 init(autoreset=True)
 
-GITHUB_API_URL = "https://api.github.com"
+GITHUB_API_URL = "INTRODUCE YOUT TOKEN"
 # Global variable to track API call count
 api_call_count = 0
 
