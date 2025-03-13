@@ -1,0 +1,7 @@
+requests
+retrying
+pandas
+colorama
+fastapi[standard]
+tqdm
+python-dotenv
