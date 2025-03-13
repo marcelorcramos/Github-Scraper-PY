@@ -1,7 +1,6 @@
 import { FadeLoader } from "react-spinners";
 
 const Logs = ({ logs, isLoading }) => {
-  // If logs is null, display nothing (initial state)
   if (logs === null && !isLoading) {
     return (
       <div className="mt-8">
@@ -13,7 +12,6 @@ const Logs = ({ logs, isLoading }) => {
     );
   }
 
-  // If logs is a string, display it as an error or message
   if (typeof logs === "string") {
     return (
       <div className="mt-8">
@@ -25,7 +23,6 @@ const Logs = ({ logs, isLoading }) => {
     );
   }
 
-  // If logs is an array, display the repositories
   return (
     <div className="mt-8">
       <h2 className="text-2xl font-bold text-center mb-4">Results:</h2>

@@ -14,12 +14,12 @@ export default function Home() {
   const [numResults, setNumResults] = useState("");
   const [years, setYears] = useState("");
   const [months, setMonths] = useState("");
-  const [logs, setLogs] = useState(null); // Initialize logs as null
-  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [logs, setLogs] = useState(null); 
+  const [isLoading, setIsLoading] = useState(false); 
 
   const handleSearch = async () => {
-    setIsLoading(true); // Start loading
-    setLogs(null); // Reset logs
+    setIsLoading(true); 
+    setLogs(null); 
 
     const queryParams = {
       language: language || undefined,
@@ -53,20 +53,16 @@ export default function Home() {
       console.error("Fetch error:", error);
       setLogs(`Error: ${error.message}`);
     } finally {
-      setIsLoading(false); // Stop loading
+      setIsLoading(false);
     }
   };
 
   return (
     <div className="min-h-screen bg-[#141313] text-[#A5A5A5] p-4">
-      {/* Header */}
       <Header />
 
-      {/* Main Content */}
       <main className="container mx-auto">
-        {/* Top Section */}
         <div className="flex flex-col md:flex-row gap-4">
-          {/* Left Section (Language and Tools) */}
           <div className="space-y-4 w-1/3">
             <div>
               <label className="block text-lg font-medium mb-1">Language:</label>
@@ -88,20 +84,17 @@ export default function Home() {
                 placeholder="Enter tool"
               />
             </div>
-            {/* Search Button */}
             <button
               onClick={handleSearch}
-              className="w-full p-2 bg-[#333131] rounded-lg hover:bg-[#444] focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="w-full p-2 bg-blue-700 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-gray-500 text-white"
             >
               Search
             </button>
           </div>
 
-          {/* Right Section (Specifications) */}
           <div className="flex-1">
             <h3 className="text-lg font-medium mb-2">Specifications:</h3>
             <div className="border border-[#333131] rounded-lg p-4 grid grid-cols-3 gap-4">
-              {/* Column 1: Filter by Stars */}
               <div className="space-y-2">
                 <label className="flex items-center gap-2">
                   <span>Filter by Stars</span>
@@ -125,7 +118,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Column 2: Number of Results */}
               <div className="space-y-2">
                 <label className="block text-sm font-medium">Number of Results</label>
                 <input
@@ -137,7 +129,6 @@ export default function Home() {
                 />
               </div>
 
-              {/* Column 3: Filter by Last Commit Date */}
               <div className="space-y-2">
                 <label className="block text-sm font-medium">Filter by Last Commit Date</label>
                 <div className="space-y-2">
@@ -161,7 +152,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Logs Section */}
         <div className="mt-8">
           <Logs logs={logs} isLoading={isLoading} />
         </div>

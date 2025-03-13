@@ -16,10 +16,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Allow frontend origin
+    allow_origins=["http://localhost:3000"], 
     allow_credentials=True,
-    allow_methods=["*"],  # Allow all methods
-    allow_headers=["*"],  # Allow all headers
+    allow_methods=["*"],  
+    allow_headers=["*"],  
 )
 
 GITHUB_GRAPHQL_URL = "https://api.github.com/graphql"
@@ -58,7 +58,7 @@ async def make_graphql_request(query: str) -> dict:
         "Authorization": f"Bearer {github_token}"
     }
     api_call_count += 1
-
+    
     timeout = httpx.Timeout(30.0)
 
     async with httpx.AsyncClient(timeout=timeout) as client:
