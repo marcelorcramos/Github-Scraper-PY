@@ -1,4 +1,4 @@
-# 🚀 GitHub Scraper
+# 🚀 GitHub Scraper (Python + Next.js)
 
 A powerful GitHub repository scraper with a **FastAPI** backend and a **Next.js** frontend.  
 This project allows users to search for repositories, filter by programming language, stars, forks, and more.  
@@ -9,6 +9,7 @@ This project allows users to search for repositories, filter by programming lang
 - ⚡ **FastAPI backend** for handling API requests  
 - 💡 **Next.js frontend** for an intuitive user interface  
 - 📦 **Caching** to optimize API requests  
+- 🎨 **TailwindCSS** for modern UI design  
 - 🛠 **Docker support** for easy deployment  
 
 ---
@@ -29,8 +30,8 @@ Before running the project, ensure you have the following installed:
 ### 1️⃣ Clone the Repository
 
 ```sh
-git clone https://github.com/yourusername/github-scraper.git
-cd github-scraper
+git clone https://github.com/marcelorcramos/Github-Scraper-PY.git
+cd Github-Scraper-PY
 ```
 
 ### 2️⃣ Backend Setup (FastAPI)
@@ -43,11 +44,11 @@ source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
 #### Install Dependencies  
 ```sh
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 ```
 
 #### Configure Environment Variables  
-Create a `.env` file inside the `backend/` directory and add:
+Create a `.env` file in the root directory and add:
 
 ```sh
 GITHUB_TOKEN=your_personal_access_token_here
@@ -55,8 +56,8 @@ GITHUB_TOKEN=your_personal_access_token_here
 
 #### Run the Backend  
 ```sh
-cd backend
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+cd python
+uvicorn backend:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 The API should now be running at `http://localhost:8000`.
@@ -67,7 +68,6 @@ The API should now be running at `http://localhost:8000`.
 
 #### Install Dependencies  
 ```sh
-cd frontend
 npm install
 ```
 
@@ -77,22 +77,6 @@ npm run dev
 ```
 
 Now, open your browser and visit `http://localhost:3000`.
-
----
-
-## 🧪 Running Tests
-
-### Run Backend Tests  
-```sh
-cd backend
-pytest
-```
-
-### Run Frontend Tests  
-```sh
-cd frontend
-npm test
-```
 
 ---
 
